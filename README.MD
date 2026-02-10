@@ -11,7 +11,14 @@ The frontend is developed using **React.js** and is responsible for handling use
 
 ---
 
+## Styling
+The frontend uses **Bootstrap** to ensure a responsive, clean, and consistent user interfa
+
+---
+
 ## Purpose
 - User interface for prescription and medication tracking  
 - Interaction with backend services  
+
+---
 
