@@ -1,1 +1,22 @@
-# Online-Medication-And-Prescription-Tracker
+# Online Medication and Prescription Tracker
+
+The Online Medication and Prescription Tracker is a full-stack web application developed to support digital prescription management and structured medication tracking. The system focuses on improving medication adherence through secure access and organized record management.
+
+---
+
+## Technology Stack
+- Frontend: React.js  
+- Backend: Spring Boot (Java)  
+- API: RESTful Web Services  
+- Database: MySQL / PostgreSQL  
+- Authentication: Spring Security with JWT  
+
+---
+
+## Repository Overview
+This repository contains the complete source code, documentation, and project artifacts related to the development of the system. Detailed functional and technical specifications are provided in the project plan and documentation files.
+
+---
+
+## License
+This project is licensed under the MIT License.
