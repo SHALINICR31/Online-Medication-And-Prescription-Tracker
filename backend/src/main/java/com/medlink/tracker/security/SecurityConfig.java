@@ -34,11 +34,12 @@ public class SecurityConfig {
         http
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .csrf(csrf -> csrf.disable())
-            .sessionManagement(session -> 
+            .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/health").permitAll()          // ✅ health check
                 .requestMatchers("/api/doctor/**").hasRole("DOCTOR")
                 .requestMatchers("/api/patient/**").hasRole("PATIENT")
                 .requestMatchers("/api/medications/search").authenticated()
@@ -54,29 +55,28 @@ public class SecurityConfig {
 
         CorsConfiguration config = new CorsConfiguration();
 
-        // ✅ Explicitly allow your frontend ports
         config.setAllowedOrigins(List.of(
-                "http://localhost:8081",   // Expo Web
-                "http://localhost:19006",  // Expo default web
-                "http://localhost:3000"    // React web (if used)
+            "http://localhost:8081",
+            "http://localhost:19006",
+            "http://localhost:3000",
+            "https://online-medication-and-prescription-tracker-production.up.railway.app", // ✅ Railway URL
+            "https://*.up.railway.app"          // ✅ covers all Railway subdomains
         ));
 
         config.setAllowedMethods(List.of(
-                "GET",
-                "POST",
-                "PUT",
-                "DELETE",
-                "PATCH",
-                "OPTIONS"
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE",
+            "PATCH",
+            "OPTIONS"
         ));
 
         config.setAllowedHeaders(List.of("*"));
-
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source =
-                new UrlBasedCorsConfigurationSource();
-
+            new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
 
         return source;
