@@ -4,7 +4,8 @@ const AsyncStorage = {
   removeItem: (key) => Promise.resolve(localStorage.removeItem(key)),
 };
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = const API_BASE_URL = 'https://online-medication-and-prescription-tracker-production.up.railway.app/api';
+
 
 const getToken = async () => {
   return await AsyncStorage.getItem('@medlink_token');
