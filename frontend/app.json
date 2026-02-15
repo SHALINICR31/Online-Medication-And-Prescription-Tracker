@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "MedLink",
+    "slug": "medlink",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/images/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#2E86AB"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.medlink.tracker"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#2E86AB"
+      },
+      "package": "com.medlink.tracker",
+      "permissions": [
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "SCHEDULE_EXACT_ALARM"
+      ]
+    }
+  }
+}
