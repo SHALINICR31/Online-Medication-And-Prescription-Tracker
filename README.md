@@ -20,3 +20,5 @@ This repository contains the complete source code, documentation, and project ar
 
 ## License
 This project is licensed under the MIT License.
+
+---
